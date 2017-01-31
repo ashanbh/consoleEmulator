@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="demo">
+
+<head>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+  <script src="script.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div ng-controller="DemoCtrl">
+    <h1>Console Emulator</h1>
+    <h6>Any console.logs in javascript are displayed in HTML</h6>
+    <ul>
+      <li ng-repeat="line in console">
+        <b>{{line.method}}</b>: 
+        <span>{{line.message}}</span>
+        </li>
+    </ul>
+  </div>
+  <script>
+    console.debug("This should not show up");
+    console.log("This should  show up");
+    console.info("So, Should this.");
+    console.log("Example 1:")
+  </script>
+</body>
+
+</html>
