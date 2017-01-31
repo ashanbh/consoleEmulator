@@ -16,7 +16,11 @@ var createLogger = function(o,m) {
     var result = {};
     result.method = m;
     var rc = Array.prototype.map.call(arguments, function(x) {
-      return JSON.stringify(x);
+      if (typeof x != "string"){
+        return JSON.stringify(x);
+      }else{
+        return x;
+      }
     });
     result.message = rc.join(" ");
     consoleArray.push(result);
